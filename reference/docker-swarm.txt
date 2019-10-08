@@ -1,0 +1,18 @@
+docker swarm init --advertise-addr 192.168.99.100
+
+docker stack deploy -c docker-compose.yml dockerstack
+
+docker container ls
+
+docker stack ps dockerstack
+
+docker stack rm dockerstack
+
+docker swarm leave --force
+
+docker-machine ls
+
+docker-machine ip <machine name>
+
+mkdir -p host/map/docker/
+mount -t vboxsf myapp /mnt/sda1/host/map/docker/
